@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :profiles
+  devise_for :users
+  
+  #root 'items#index'
   get '/about' => 'site#about'
   get '/contact' => 'site#contact'
   get '/admin' => 'user#admin_login'
@@ -7,7 +11,9 @@ Rails.application.routes.draw do
   get '/cart/:id' => 'cart#add'
   get '/cart/clear' => 'cart#clearCart' 
 
-  root 'cart#index'
+ # root 'cart#index'
+ 
+  root 'items#index'
   
   resources :items
 

@@ -51,7 +51,7 @@ div#content {
 div#header,
 div#footer,
 div#menu {
-    background: rgb(20, 20, 20);
+    background: white; /*rgb(20, 20, 20);/*Amin Musaed*/
     padding: 3px;
     border:2px orange solid;
     max-width: 994px;

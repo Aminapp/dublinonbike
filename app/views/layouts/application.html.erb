@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Golfstore</title>
+  <title>Dublin Bikes</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <br>
+  <div>
+  
+  <h1  align="center"><font size="16" color="navy"><b>Dublin Bikes</b></h1></font><br><hr>
+
+  </div>
   <div id="header">
     
   </div>
@@ -24,7 +30,15 @@
   <div id="container">
     <div id="content">
       <p class="notice"><%= flash[:notice] %></p>
+      <p class="alert"><%= flash[:alert] %></p>
       <%= yield %>
+      <% if user_signed_in? %>
+      <div> Signed <%= current_user.email %> (<%= link_to 'Sign out',
+      destroy_user_session_path, :method => :delete %>)
+      <% else %>
+      <%= link_to 'Register', new_user_registration_path %> or <%= link_to 'Sign in',
+      new_user_session_path %>
+      <% end %>
     </div>
     <div id="first-column">
         <div class="loginbox">
@@ -36,7 +50,7 @@
     </div>
   </div>
   <div id="footer">
-    <h6 class="footertext">&copy; Online Golfstore&trade; 2017</h6>
+    <h6 class="footertext">2017&copy; Dublin Bikes &trade; Amin Musaed NCI x16139992</h6>
   </div>
 
 </body>

@@ -24,7 +24,11 @@ class ItemsController < ApplicationController
   # POST /items
   # POST /items.json
   def create
-    @item = Item.new(item_params)
+    puts '++++++++++++++++++++++++++++++++'
+    puts params.inspect
+    puts '++++++++++++++++++++++++++++++++'
+    
+     @item = Item.new(item_params)
 
     respond_to do |format|
       if @item.save
