@@ -15,7 +15,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/new
 
   def new
-    @profile = Profile.new
+    @profile = user_id.new
     @profile.user_id = current_user.id
     
     respond_to do |format|
