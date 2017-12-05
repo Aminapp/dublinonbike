@@ -5,12 +5,21 @@
 <% end %>
 
 <% total = 0 %>
+<table class="cart">
+        <tr> 
+        <td class="legend">Rent period</td>
+       
+        <td class="legend">Number of days</td>
+        
+    </tr>
+    <br><br>
+</table>
 
 <table class="cart">
     <tr>
         <td class="legend"></td>
         <td class="legend">Item</td>
-        <td class="legend">Price</td>
+        <td class="legend">Price per day</td>
         <td class="legend">Qty</td>
         <td class="legend">Total</td>
     </tr>
@@ -26,7 +35,7 @@
         <td class="title"><%= link_to item.title, item %></td>
         <td class="price"><%= number_to_currency(item.price) %></td>
         <td class="quantity"><%= quantity %><br /></td>
-        <td class="price"><%= number_to_currency(quantity * item.price, :unit => "£") %></td>
+        <td class="price"><%= number_to_currency(quantity * item.price, :unit => "€ ") %></td>
     </tr>
     <% total += quantity * item.price %>
 <% end %>
@@ -36,7 +45,7 @@
             <div class="total">Total:</div>
         </td>
         <td>
-            <div class="price"><%= number_to_currency(total, :unit => "Eur") %></div>
+            <div class="price"><%= number_to_currency(total, :unit => "€") %></div>
         </td>
     </tr>
 </table>
